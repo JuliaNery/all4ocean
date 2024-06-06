@@ -1,4 +1,27 @@
 package com.global.all4ocean.entity;
 
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.validator.constraints.Length;
+
+@Data
+@Table(name = "tb_comentario_post")
+@Getter
+@Setter
+@AllArgsConstructor
+@Builder
 public class ComentarioPostEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_comentario_post")
+    private Long id;
+    @Column(name = "comentario_post")
+    @Length(min = 1, max = 300)
+    private String comentario_post;
+    @ManyToOne
+    @JoinColumn(name = "id_post")
+    private PostOngEntity postOngEntity;
+    @ManyToOne
+    @JoinColumn(name = "id_voluntario")
+    private VoluntarioEntity voluntarioEntity;
 }
