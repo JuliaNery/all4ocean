@@ -33,24 +33,24 @@ public class VoluntarioPostController {
     @Autowired
     VoluntarioPostService voluntarioPostService;
 
-    @GetMapping("/{id}")
+    @GetMapping("voluntario/{id}")
     public ResponseEntity getByIdVoluntario(
             @PageableDefault(size = 5, sort = "data", direction = Sort.Direction.DESC) Pageable pageable,
             @PathVariable Long id
     ){
 
-        Page<VoluntarioPostEntity> page = voluntarioPostRepository.findByIdVoluntario(id, pageable);
+        Page<VoluntarioPostEntity> page = voluntarioPostRepository.findByVoluntarioEntityId(id, pageable);
 
         return ResponseEntity.ok().body(page);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("post/{id}")
     public ResponseEntity getByIdPost(
             @PageableDefault(size = 5, sort = "data", direction = Sort.Direction.DESC) Pageable pageable,
             @PathVariable Long id
     ){
 
-        Page<VoluntarioPostEntity> page = voluntarioPostRepository.findByIdPost(id, pageable);
+        Page<VoluntarioPostEntity> page = voluntarioPostRepository.findByPostOngEntityId(id, pageable);
 
         return ResponseEntity.ok().body(page);
     }

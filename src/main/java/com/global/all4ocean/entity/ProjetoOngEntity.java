@@ -31,7 +31,7 @@ public class ProjetoOngEntity {
     @Column(name = "estado_projeto")
     private String estado;
     @ManyToOne
-    @JoinColumn(name = "id_ong")
+    @JoinColumn(name = "id_ong", nullable = false)
     private OngEntity ongEntity;
 
     public ProjetoOngEntity(Optional<ProjetoOngEntity> pjt) {

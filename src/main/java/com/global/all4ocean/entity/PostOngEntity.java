@@ -25,7 +25,7 @@ public class PostOngEntity {
     @Column(name = "data_post")
     private LocalDate dataPost;
     @ManyToOne
-    @JoinColumn(name = "id_projeto")
+    @JoinColumn(name = "id_projeto", nullable = false)
     private ProjetoOngEntity projetoOng;
 
     public PostOngEntity(Optional<PostOngEntity> byId) {

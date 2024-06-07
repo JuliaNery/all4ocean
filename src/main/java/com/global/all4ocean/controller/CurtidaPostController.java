@@ -31,24 +31,24 @@ public class CurtidaPostController {
     @Autowired
     CurtidaPostService curtidaPostService;
 
-    @GetMapping("/{id}")
+    @GetMapping("voluntario/{id}")
     public ResponseEntity getByIdVoluntario(
             @PageableDefault(size = 5, sort = "data", direction = Sort.Direction.DESC) Pageable pageable,
             @PathVariable Long id
     ){
 
-        Page<CurtidaPostEntity> page = curtidaPostRepository.findByIdVoluntario(id, pageable);
+        Page<CurtidaPostEntity> page = curtidaPostRepository.findByVoluntarioEntityId(id, pageable);
 
         return ResponseEntity.ok().body(page);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("post/{id}")
     public ResponseEntity getByIdPost(
             @PageableDefault(size = 5, sort = "data", direction = Sort.Direction.DESC) Pageable pageable,
             @PathVariable Long id
     ){
 
-        Page<CurtidaPostEntity> page = curtidaPostRepository.findByIdPost(id, pageable);
+        Page<CurtidaPostEntity> page = curtidaPostRepository.findByPostOngEntityId(id, pageable);
 
         return ResponseEntity.ok().body(page);
     }

@@ -33,9 +33,6 @@ public class VoluntarioController {
     @Autowired
     VoluntarioRepository voluntarioRepository;
 
-    @Autowired
-    PagedResourcesAssembler<VoluntarioEntity> pageAssembler;
-
     @GetMapping
     public ResponseEntity getAll(
             @PageableDefault(size = 5, sort = "data", direction = Sort.Direction.DESC) Pageable pageable

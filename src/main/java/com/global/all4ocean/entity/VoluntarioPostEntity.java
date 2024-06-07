@@ -16,9 +16,9 @@ public class VoluntarioPostEntity {
     @Column(name = "id_voluntario_post")
     private Long id;
     @ManyToOne
-    @JoinColumn(name = "id_post")
+    @JoinColumn(name = "id_post", nullable = false)
     private PostOngEntity postOngEntity;
     @ManyToOne
-    @JoinColumn(name = "id_voluntario")
+    @JoinColumn(name = "id_voluntario", nullable = false)
     private VoluntarioEntity voluntarioEntity;
 }

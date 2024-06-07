@@ -20,9 +20,9 @@ public class ComentarioPostEntity {
     @Length(min = 1, max = 300)
     private String comentario;
     @ManyToOne
-    @JoinColumn(name = "id_post")
+    @JoinColumn(name = "id_post", nullable = false)
     private PostOngEntity postOngEntity;
     @ManyToOne
-    @JoinColumn(name = "id_voluntario")
+    @JoinColumn(name = "id_voluntario", nullable = false)
     private VoluntarioEntity voluntarioEntity;
 }

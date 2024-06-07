@@ -31,24 +31,24 @@ public class ComentarioPostController {
     @Autowired
     ComentarioPostService comentarioPostService;
 
-    @GetMapping("/{id}")
+    @GetMapping("voluntario/{id}")
     public ResponseEntity getByIdVoluntario(
             @PageableDefault(size = 5, sort = "data", direction = Sort.Direction.DESC) Pageable pageable,
             @PathVariable Long id
     ){
 
-        Page<ComentarioPostEntity> page = comentarioPostRepository.findByIdPost(id, pageable);
+        Page<ComentarioPostEntity> page = comentarioPostRepository.findByVoluntarioEntityId(id, pageable);
 
         return ResponseEntity.ok().body(page);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("post/{id}")
     public ResponseEntity getByIdPost(
             @PageableDefault(size = 5, sort = "data", direction = Sort.Direction.DESC) Pageable pageable,
             @PathVariable Long id
     ){
 
-        Page<ComentarioPostEntity> page = comentarioPostRepository.findByIdPost(id, pageable);
+        Page<ComentarioPostEntity> page = comentarioPostRepository.findByPostOngEntityId(id, pageable);
 
         return ResponseEntity.ok().body(page);
     }
