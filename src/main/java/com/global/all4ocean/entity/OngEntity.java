@@ -29,7 +29,6 @@ public class OngEntity {
     @Column(name = "senha_ong")
     private String senha;
     @Column(name = "cep_ong")
-    @Length(max = 8, min = 8)
     private String cep;
     @Column(name = "rua_ong")
     private String rua;
@@ -42,7 +41,6 @@ public class OngEntity {
     @Column(name = "cidade_ong")
     private String cidade;
     @Column(name = "estado_ong")
-    @Length(max = 2, min = 2)
     private String estado;
     @Column(name = "telefone_ong")
     private String telefone;

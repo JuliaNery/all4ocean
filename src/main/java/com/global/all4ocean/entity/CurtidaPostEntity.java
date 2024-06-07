@@ -9,6 +9,7 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @Builder
+@Entity
 public class CurtidaPostEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

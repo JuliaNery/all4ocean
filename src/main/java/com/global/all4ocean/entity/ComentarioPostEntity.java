@@ -5,6 +5,7 @@ import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
 @Data
+@Entity
 @Table(name = "tb_comentario_post")
 @Getter
 @Setter

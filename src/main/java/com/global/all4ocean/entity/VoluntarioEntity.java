@@ -1,10 +1,17 @@
 package com.global.all4ocean.entity;
 
+import com.global.all4ocean.controller.VoluntarioController;
+import com.global.all4ocean.response.VoluntarioResponse;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.hateoas.EntityModel;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 
 import java.time.LocalDate;
+
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
 @Entity
 @Data
@@ -21,7 +28,7 @@ public class VoluntarioEntity {
     @Column(name = "nome_vol")
     private String nome;
     @Column(name = "cpf_vol")
-    @Length(max = 14, min = 11)
+
     private String cpf;
     @Column(name = "data_nasc_vol")
     private LocalDate dataNasc;
@@ -30,7 +37,7 @@ public class VoluntarioEntity {
     @Column(name = "senha_vol")
     private String senha;
     @Column(name = "cep_vol")
-    @Length(max = 8, min = 8)
+
     private String cep;
     @Column(name = "rua_vol")
     private String rua;
@@ -43,8 +50,10 @@ public class VoluntarioEntity {
     @Column(name = "cidade_vol")
     private String cidade;
     @Column(name = "estado_vol")
-    @Length(max = 2, min = 2)
+
     private String estado;
     @Column(name = "telefone_vol")
     private String telefone;
+
+
 }
