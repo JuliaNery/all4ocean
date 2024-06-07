@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Data
 @Entity
@@ -26,4 +27,7 @@ public class PostOngEntity {
     @ManyToOne
     @JoinColumn(name = "id_projeto")
     private ProjetoOngEntity projetoOng;
+
+    public PostOngEntity(Optional<PostOngEntity> byId) {
+    }
 }

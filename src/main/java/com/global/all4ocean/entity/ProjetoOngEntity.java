@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Entity
 @Data
@@ -32,4 +33,7 @@ public class ProjetoOngEntity {
     @ManyToOne
     @JoinColumn(name = "id_ong")
     private OngEntity ongEntity;
+
+    public ProjetoOngEntity(Optional<ProjetoOngEntity> pjt) {
+    }
 }

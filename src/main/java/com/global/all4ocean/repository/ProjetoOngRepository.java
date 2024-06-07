@@ -11,4 +11,5 @@ import org.springframework.stereotype.Repository;
 public interface ProjetoOngRepository extends JpaRepository<ProjetoOngEntity, Long> {
     Page<ProjetoOngEntity> findAll(Pageable pageable);
 
+    Page<ProjetoOngEntity> findByOngEntity(Long id, Pageable pageable);
 }

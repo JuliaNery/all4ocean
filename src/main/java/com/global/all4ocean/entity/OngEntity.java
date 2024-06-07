@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
+import java.util.Optional;
+
 @Entity
 @Data
 @Table(name = "tb_ong")
@@ -44,4 +46,7 @@ public class OngEntity {
     private String estado;
     @Column(name = "telefone_ong")
     private String telefone;
+
+    public OngEntity(Optional<OngEntity> ong) {
+    }
 }

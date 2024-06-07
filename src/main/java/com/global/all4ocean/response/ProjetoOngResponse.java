@@ -22,6 +22,6 @@ public record ProjetoOngResponse(
                 projetoOng.getDataFinal(),
                 projetoOng.getCidade(),
                 projetoOng.getEstado(),
-                projetoOng.getId());
+                projetoOng.getOngEntity().getId());
     }
 }

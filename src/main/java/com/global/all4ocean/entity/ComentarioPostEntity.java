@@ -18,7 +18,7 @@ public class ComentarioPostEntity {
     private Long id;
     @Column(name = "comentario_post")
     @Length(min = 1, max = 300)
-    private String comentario_post;
+    private String comentario;
     @ManyToOne
     @JoinColumn(name = "id_post")
     private PostOngEntity postOngEntity;
